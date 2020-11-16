@@ -95,7 +95,11 @@ void main()
     PORTC=0b00000000;
     PORTD=0b00000000;
     PORTE=0b00000000;
-
+    
+    PR2=0xF9;                   // Period is 200ms
+    T2CON=0b00000001;
+    CCP1CON=0b00001100;         
+    
     INTCON=0b11001000;
     
     while(1)
@@ -141,6 +145,7 @@ void main()
 
         if(bathroom_light=1)
         {
+            bathroom_light=0;
             
         }
     }
